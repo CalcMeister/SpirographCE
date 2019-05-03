@@ -1,0 +1,50 @@
+#####################################################################################
+                                     SPIROGRAPH CE
+#####################################################################################
+
+Enjoy the timeless fun of the renowned Spirograph toy right within your calculator!
+Handles three colors and graphs at once to replicate the original Spirograph.
+Uses intelligent Tstep design (Idea by Jacobly) to keep graphs from repeating.
+Save your Spirographs in Picvars!
+Retains previous graph info using a Graph Database
+
+***Please note that this program does not graph as fast as other graphs you may be
+   used to, so please be patient, it’s trying its best!
+
+Menu help:
+	EDIT RED:
+		Edits the attributes of the red pen spirograph.
+		When prompted for number of teeth on the inner gear,
+		note that the higher the lcm of the outer gear and inner
+		gear, the longer it will take to draw. (the outer gear will
+		always have 120 teeth)
+	EDIT GREEN:
+		Same as Edit Red except for the green pen.
+	EDIT BLUE:
+		You get the idea.
+	CLEAR ALL:
+		Erases all spirograph data so you can start from scratch.
+	DRAW SPIROGRAPH:
+		Draws all created spirographs. If you haven't edited any,
+		then the screen will be blank.
+		DRAW DENSITY:
+			Speedy is quick but draws longer segments, making the
+			Spirograph look less precise but take a short time to
+			draw. Standard is a good equilibrium between speed
+			and precision. High is good for times when you aren’t
+			in a rush and can wait a minute for a stunning design.
+			Very High is good for when you have hella time to waste.
+		The program will estimate the seconds it thinks the calculator
+		will take per graph to display your graph.
+	SAVE AS PICVAR:
+		Choose a Picvar slot to save your Spirograph
+	CREDITS:
+		Displays credits.
+	EXIT:
+		Exits the program, retaining all graph information you
+		had before you started the program using a GDB.
+
+CODE BY CALCMEISTER
+HELP FROM JACOBLY
+
+www.cemetech.net
