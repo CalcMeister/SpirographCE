@@ -1,0 +1,109 @@
+ClrHome
+Output(10,1,"PREPARING...
+StoreGDB 1
+Param
+FnOff 1,2,3,4,5,6
+Radian
+Thin
+Sequential
+GridOff
+AxesOff
+BorderColor 4
+BackgroundOff
+ZStandard
+ZSquare
+"(10-A)cos((A)10(T/TmaxL₁(1)))+Dcos((1-((A)10))(T/TmaxL₁(1)"→X₁
+"(10-A)sin((A)10(T/TmaxL₁(1)))-Dsin((1-((A)10))(T/TmaxL₁(1)"→Y₁
+"(10-B)cos((B)10(T/TmaxL₁(2)))+Ecos((1-((B)10))(T/TmaxL₁(2)"→X₂
+"(10-B)sin((B)10(T/TmaxL₁(2)))-Esin((1-((B)10))(T/TmaxL₁(2)"→Y₂
+"(10-C)cos((C)10(T/TmaxL₁(3)))+Fcos((1-((C)10))(T/TmaxL₁(3)"→X₃
+"(10-C)sin((C)10(T/TmaxL₁(3)))-Fsin((1-((C)10))(T/TmaxL₁(3)"→Y₃
+GraphColor(1,RED
+GraphColor(2,GREEN
+GraphColor(3,BLUE
+3→dim(L₁
+Fill(0,L₁
+.7→Tstep
+FnOff 1,2,3,4,5,6
+Lbl MU
+ClrHome
+Menu("     SPIROGRAPH CE      ","Edit Red…",ER,"Edit Green…",EG,"Edit Blue…",EB,"Clear All",CA,"Draw Spirograph",DS,"Save As Picvar…",SA,"Credits",CR,"EXIT",XT
+"SAVE AS PICVAR
+Lbl SA
+Input "Picvar Slot (0-9):",G
+StorePic G
+Goto MU
+"EXIT
+Lbl XT
+RecallGDB 1
+Return
+"DISPLAY SPIROGRAPH
+Lbl DS
+Menu("Graph Density (Dense=Slow)","Speedy",D1,"Standard",D2,"High",D3,"Very High",D4
+Lbl D1
+1→Tstep
+Goto D5
+Lbl D2
+.7→Tstep
+Goto D5
+Lbl D3
+.4→Tstep
+Goto D5
+Lbl D4
+.1→Tstep
+Lbl D5
+max(L₁)→Tmax
+Disp round(Tmax/5.6267/Tstep,0
+Pause "SECONDS DRAW TIME/GRAPH
+DispGraph
+Text(0,0,"[ENTER]
+Pause 
+Goto MU
+"CREDITS
+Lbl CR
+ClrHome
+Output(5,5,"CODE BY CALCMEISTER"
+Output(6,3,"TMAX DESIGN BY JACOBLY
+Pause 
+Goto MU
+"CLEAR ALL
+Lbl CA
+FnOff 1,2,3
+Fill(0,L₁
+Goto MU
+"EDIT RED
+Lbl ER
+Disp "Outer Gear Teeth:120
+Input "Inner Gear Teeth:",I
+Disp "Hole Number (0-20)
+Input "0=Center and 20=Edge:",H
+(20π)/120→T
+.5(TIπ)→A
+.05HA→D
+(lcm(120,I)/I)2π→L₁(1)
+FnOn 1
+Goto MU
+"EDIT GREEN
+Lbl EG
+Disp "Outer Gear Teeth:120
+Input "Inner Gear Teeth:",I
+Disp "Hole Number (0-20)
+Input "0=Center and 20=Edge:",H
+(20π)/120→T
+.5(TIπ)→B
+.05HB→E
+(lcm(120,I)/I)2π→L₁(2)
+FnOn 2
+Goto MU
+"EDIT BLUE
+Lbl EB
+Disp "Outer Gear Teeth:120
+Input "Inner Gear Teeth:",I
+Disp "Hole Number (0-20)
+Input "0=Center and 20=Edge:",H
+(20π)/120→T
+.5(TIπ)→C
+.05HC→F
+(lcm(120,I)/I)2π→L₁(3)
+FnOn 3
+Goto MU
